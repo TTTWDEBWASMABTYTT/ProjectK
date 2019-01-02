@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">Project K</string>
+
+    <string name="text_need_permission">Project K requires permission to change your Do Not Disturb settings.</string>
+    <string name="text_have_permission">Project K</string>
+
+    <string name="button_need_permission">Open Permissions</string>
+    <string name="button_have_permission">Unmute</string>
+
+</resources>
