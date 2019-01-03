@@ -6,26 +6,32 @@ package tttwdebwasmabtytt.projectk.utilities;
 
 public class Parser {
 
-    // Temporary password
-    private String tempPassword = "123";
-
+    //String Values.
+    public final static String UNMUTE = "unmute";
+    public final static String UNKNOWN = "unknown";
+    public final static String BAD_CREDENTIALS = "bad";
 
     /**
      * Returns true if the given string starts with the temporary password.
      * Returns false otherwise.
-     * @param string The string to be parsed
+     * @param msg The string to be parsed
      * @return Whether the string starts with the password or not.
      */
-    public boolean parseString(String string){
-
-        int passwordLength = tempPassword.length();
-
-        if(string.length() >= passwordLength){
-            return string.substring(0, passwordLength).equals(tempPassword);
-        } else {
-            return false;
+    public static String parseString(String msg){
+        //TODO Temporary password should be changed and an actual password used instead. (Store password in a file if shared preferences can be deleted by user).
+        // Temporary password
+        String tempPassword = "12345";
+        if(msg.startsWith(tempPassword))
+        {
+            String command = msg.substring(tempPassword.length(),msg.length());
+            if(command.equals(UNMUTE)){
+                return UNMUTE;
+            } else {
+                return UNKNOWN;
+            }
+        }else {
+            return BAD_CREDENTIALS;
         }
-
     }
 
 }
